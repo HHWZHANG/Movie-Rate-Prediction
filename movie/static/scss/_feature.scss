@@ -1,0 +1,104 @@
+
+/*--
+    06. Feature Css
+----------------------------*/
+.single-feature {
+    padding: 0 40px;
+    @media #{$large-mobile}{
+        padding: 0;
+    }
+    &-icons {
+        height: 100px;
+        width: 100px;
+        background: #fff;
+        text-align: center;
+        line-height: 100px;
+        border-radius: 5000px;
+        margin: 0 auto 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+    @media #{$desktop-device}{
+        padding: 0;
+    }
+    
+}
+.border-b-one {
+    border-bottom: 3px solid $theme-color;
+}
+.border-b-two {
+    border-bottom: 3px solid $theme-color-two;
+}
+    
+.best-single-feature {
+    padding: 0 40px;
+    
+    &-icons {
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        line-height: 100px;
+        border-radius: 5000px;
+        margin: 0 auto 20px;
+        background-image: linear-gradient(to left, #0259ae 51%, #12b4f2 100%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+    &-contents {
+        & h4 {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    @media #{$desktop-device}{
+        padding: 0;
+    } 
+    @media #{$large-mobile}{
+        padding: 0 15px;
+    } 
+}
+
+/*-- get-started-area Css*/
+.get-started-area {
+    background-image: linear-gradient(to left, #0259ae 51%, #12b4f2 100%);
+    padding: 100px 0;
+    &.black {
+        background-image: none;
+        background-color: $black;
+    }
+    & h2 {
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+    & p {
+        font-size: 16px;
+    }
+    @media #{$large-mobile}{
+        padding: 60px 0;
+       
+    }
+    @media #{$tablet-device}{
+        padding: 80px 0;
+    }
+}
+
+.get-started-buton {
+    text-align: right;
+    @media #{$large-mobile}{
+        text-align: center;
+        margin-top: 30px;
+    }
+    & a {
+        padding: 18px 50px;
+        color: #637282;
+        background: #fff;
+        display: inline-block;
+        border-radius: 5px;
+        &:hover {
+            background: #333;
+            color: $white;
+        }
+    }
+}

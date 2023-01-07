@@ -1,0 +1,202 @@
+/*--
+    12. Pricing Panel Css
+--------------------------*/
+.pricing-panel {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    &::after {
+        background:linear-gradient(to top, #12b4f2 50%,#0259ae 100%);
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(0.4s);
+    }
+    
+    & .pricing-heading {
+        padding: 70px 0 30px;
+        position: relative;
+        z-index: 1;
+        
+        &::before {
+            background: #375dcd none repeat scroll 0 0;
+            border-radius: 100%;
+            height: 300px;
+            position: absolute;
+            width: 610px;
+            content: "";
+            top: -170px;
+            left: -60px;
+            transform: rotate(-22deg);
+            z-index: -1;
+            @include transition(0.4s);
+        }
+        & h2 {
+            color: $white;
+            font-weight: 600;
+        }
+        & h4 {
+            color: $white;
+            font-weight: 600;
+        }
+        
+    }
+    
+    & .pricing-body {
+        margin-top: 15px;
+        & ul {
+            & li {
+                display: block;
+                color: #333;
+                font-size: 16px;
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @media #{$large-mobile,$tablet-device}{
+                    margin-bottom: 10px;
+                }
+            }
+        }  
+    }
+    
+    & .pricing-footer {
+        padding-top: 30px;
+        padding-bottom: 40px;
+        & .plan-btn {
+            display: inline-block;
+            padding: 12px 40px;
+            background: #375dcd;
+            color: $white;
+            border-radius: 5px;
+            font-size: 16px;
+            &:hover {
+                background: #fff;
+                color: #333;
+            }
+        }
+    }
+    &.modify-pricing-panel {
+        background: #222;
+        & .pricing-heading {
+            padding: 50px 0 50px;
+            &::before {
+                background: #333 none repeat scroll 0 0;
+            }
+            & h2 {
+                span {
+                    font-size: 16px;
+                    display: inline-block;
+                }
+            }
+            & h3 {
+                color: $white;
+                font-weight: 600;
+            }
+        }
+        & .pricing-body {
+            padding: 0 10px;
+            & ul {
+                & li {
+                    color: #ccc;
+                    margin-bottom: 15px;
+                }
+            }  
+        }
+        & .pricing-footer {
+            & .plan-btn {
+                background: #333;
+                font-weight: 600;
+                @media #{$tablet-device}{
+                    padding: 8px 25px;
+                }
+            }
+        }
+        &.active {
+            & .pricing-heading {
+                &::before {
+                    background: $theme-color-four none repeat scroll 0 0;
+                }
+            }
+            & .pricing-footer {
+                & .plan-btn {
+                    background: $theme-color-four;
+                }
+            }
+        }
+        &:hover {
+            &::after {
+                display: none;
+            }
+            & .pricing-heading {
+                &::before {
+                   background: $theme-color-four;
+                }
+            }
+            & .pricing-body {
+                & ul {
+                    & li {
+                        color: #ccc;
+                    }
+                }  
+            }
+            & .pricing-footer {
+                & .plan-btn {
+                    background: $theme-color-four;
+                    color: #fff;
+                    &:hover {
+                        background: #333;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        & .pricing-heading {
+            &::before {
+               background:linear-gradient(to top, #0259ae 10%, #12b4f2 50%);
+            }
+        }
+        & .pricing-body {
+            & ul {
+                & li {
+                    color: #fff;
+                }
+            }  
+        }
+    }
+}
+.free-panel {
+    position: relative;
+    & span {
+        position: absolute;
+        left: -120px;
+        top: 50%;
+        background:linear-gradient(to left, #0259ae 31%, #12b4f2 80%);
+        font-size: 16px;
+        letter-spacing: 2px;
+        transform: rotate(-90deg);
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+    }
+    @media #{$small-mobile}{
+        display: none;
+    }
+}

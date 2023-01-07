@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="breadcrumb-area breadcrumb-modify-padding bg-black-3">
+        <div class="container">
+            <div class="in-breadcrumb">
+                <div class="row">
+                    <div class="col">
+                        <div class="breadcrumb-style-2">
+                            <h2>{{ movie.title }}</h2>
+                            <div class="badge bg-danger">IMDB Rating: <span class="fs-3">{{ movie.rating }}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-black-3">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ movie.image_url }}" alt="" loading="lazy" class="img-thumbnail">
+                </div>
+
+                <div class="col-7 ps-3 ms-5">
+                    <form action="{{ url_for("movie_detail_bp.movie_detail", imdb_id=movie.imdb_id) }}"
+                          method="post">
+                        {{ form.csrf_token }}
+                        <div class="row">
+                            <div class="col-3">
+                                <h4 class="text-white">Set your rating:</h4>
+                            </div>
+
+                            <div class="col-7">
+
+                                {{ form.rating(class="form-select form-select-lg mb-3") }}
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center">
+                                {{ form.confirm(class="btn btn-danger") }}
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="bg-black"><br></div>
+
+
+
+{% endblock %}

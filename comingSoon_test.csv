@@ -1,0 +1,4 @@
+imdb_id,title,cast,genres,runtime,releaseDate,year,directorList,production_companies,production_countries,contentRating,imDbRating,imDbRatingVotes,Predict_Rating
+tt10028196,Laal Singh Chaddha,"['nm0451148', 'nm0004569', 'nm2435847', 'nm0004626', 'nm3602118']","['Comedy', ' Drama']",,2022-08-11,2022,['nm2378914'],"['Aamir Khan Productions', 'Viacom18 Motion Pictures']","['India', ' Pakistan']",,,,7.358482135495737
+tt13698942,The Immaculate Room,"['nm0098378', 'nm2230865', 'nm0386472', 'nm3285199', 'nm4227751']","['Drama', ' Thriller']",92,2022-02-03,2022,['nm4320125'],"['Balcony 9 Productions', 'K5 Film', 'Productivity Media']",['USA'],,6.8,14,5.8460765315149095
+tt8883486,Medieval,"['nm0004936', 'nm2998321', 'nm0000323', 'nm0001709', 'nm3435612']","['Action', ' Drama', ' History']",,,2022,['nm1362893'],"['J.B.J. Film', 'Genesy', 'Double Tree Entertainment']",['Czech Republic'],R,,,4.413605767649197

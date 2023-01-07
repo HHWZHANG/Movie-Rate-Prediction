@@ -1,0 +1,157 @@
+/*--
+    - Breadcrumb Style
+------------------------------------------*/
+
+/*---- Breadcrumb One ----*/
+.breadcrumb-area {
+    padding: 120px 0;
+    &.breadcrumb-modify-padding {
+        padding: 27px 0 26px 0;
+        .in-breadcrumb {
+            margin-top: 0px;
+        }
+    }
+    @media #{$tablet-device}{
+        padding: 80px 0;
+    }
+    @media #{$large-mobile}{
+        padding: 60px 0;
+    }
+    .in-breadcrumb {
+        margin-top: 50px;
+    }
+    & .col {
+        > h2 {
+            font-weight: 700;
+            margin-top: -5px;
+            font-weight: 600;
+            color: $white;
+            @media #{$tablet-device}{
+                font-size: 26px;
+            }
+            @media #{$large-mobile}{
+                font-size: 26px;
+            }
+        }
+    }
+}
+.breadcrumb-list {
+    & .breadcrumb-item {
+        font-size: 14px;
+        color: $white;
+        text-transform: capitalize;
+        line-height: 1;
+        display: inline-block;
+        &.active {
+            color: $white;
+        }
+        & a {
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    } 
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    &::before {
+        color: $white;
+        content: ">";
+        display: inline-block;
+        padding-right: 10px;
+    }  
+}
+    
+.breadcrumb-style-2 {
+	display: flex;
+	align-items: flex-end;
+    flex-wrap: wrap;
+    @media #{$large-mobile}{
+        display: block;
+    }
+    &.breadcrumb-style-2 {
+        justify-content: center;
+    }
+    h2 {
+        color: #ffffff;
+        line-height: 25px;
+        margin: 0 20px 0 0;
+        font-size: 25px;
+        font-weight: 600;
+        @media #{$large-mobile}{
+            font-size: 22px;
+            margin: 0 20px 15px 0;
+        }
+    }
+    .breadcrumb-list-2 {
+        display: flex;
+        align-items: center;
+        @media #{$large-mobile}{
+            display: block;
+        }
+        li {
+            color: #ddd;
+            margin-right: 20px;
+            font-size: 16px;
+            letter-spacing: .3px;
+            display: inline-block;
+            line-height: 1;
+            position: relative;
+            @media #{$large-mobile}{
+                font-size: 14px;
+                margin-right: 14px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                width: 2px;
+                height: 12px;
+                right: -11px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #888;
+                @media #{$large-mobile}{
+                    right: -8px;
+                    height: 14px;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        &.black {
+            li {
+                color: #ddd;
+                a {
+                    color: #ddd;
+                    &:hover {
+                        color: $theme-color-four;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

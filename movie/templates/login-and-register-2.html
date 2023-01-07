@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="breadcrumb-area breadcrumb-modify-padding bg-black-3">
+        <div class="container">
+            <div class="in-breadcrumb">
+                <div class="row">
+                    <div class="col">
+                        <div class="breadcrumb-style-2 center">
+                            <h2>Login & Register</h2>
+                            <ul class="breadcrumb-list-2 black">
+                                <li><a href="index-4.html">Home</a></li>
+                                <li>Login & Register</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login-register  -->
+    <div class="register-page bg-black section-pt-90 section-pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 m-auto">
+                    <div class="login-register-wrapper">
+                        <!-- login-register-tab-list start -->
+                        <div class="login-register-tab-list white nav">
+                            {% if is_login %}
+                                <a class="active" data-bs-toggle="tab" href="#lg1">
+                                    <h4> login </h4>
+                                </a>
+                                <a data-bs-toggle="tab" href="#lg2">
+                                    <h4> register </h4>
+                                </a>
+                            {% else %}
+                                <a data-bs-toggle="tab" href="#lg1">
+                                    <h4> login </h4>
+                                </a>
+                                <a class="active" data-bs-toggle="tab" href="#lg2">
+                                    <h4> register </h4>
+                                </a>
+                            {% endif %}
+                        </div>
+                        <!-- login-register-tab-list end -->
+
+
+                        <div class="tab-content">
+                            {% if error_mesg is not none %}
+                                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                         aria-label="Danger:">
+                                        <use xlink:href="#exclamation-triangle-fill"/>
+                                    </svg>
+                                    <div>
+                                        {{ error_mesg }}
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if is_login %}
+                                <div id="lg1" class="tab-pane active">
+                            {% else %}
+                                <div id="lg1" class="tab-pane">
+                            {% endif %}
+
+                            <div class="login-form-container border-black">
+                                <div class="login-register-form black-style">
+                                    <form action="{{ log_handler_url }}" method="post">
+                                        {{ log_form.csrf_token }}
+                                        <!-- Need to include this token - Flask WTForms requires it. -->
+                                        <div class="login-input-box">
+                                            {{ log_form.user_name(placeholder="User Name") }}
+                                            {{ log_form.password(placeholder="Password") }}
+                                        </div>
+                                        <div class="button-box">
+                                            <div class="login-toggle-btn">
+                                                {{ log_form.remember(type="checkbox") }}
+                                                <label>Remember me</label>
+                                            </div>
+                                            <div class="button-box">
+                                                {{ log_form.log_submit(class="btn login-btn") }}
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                            {% if is_login %}
+                                <div id="lg2" class="tab-pane">
+                            {% else %}
+                                <div id="lg2" class="tab-pane active">
+                            {% endif %}
+                            <div class="login-form-container border-black">
+                                <div class="login-register-form black-style">
+                                    <form action="{{ reg_handler_url }}" method="post">
+                                        {{ reg_form.csrf_token }}
+                                        <div class="login-input-box">
+                                            {{ reg_form.user_name(placeholder="User Name") }}
+                                            {{ reg_form.password(placeholder="Password" ) }}
+                                            {{ reg_form.email(placeholder="Email") }}
+                                        </div>
+                                        <div class="button-box">
+                                            {{ reg_form.reg_submit(class="register-btn btn") }}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// login-register End -->
+        </div>
+    </div>
+
+
+
+{% endblock %}

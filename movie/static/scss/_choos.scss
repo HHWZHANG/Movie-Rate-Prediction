@@ -1,0 +1,311 @@
+/*--
+    07. Choose Area Css
+------------------------------*/
+.choose-image-wrap, .choose-contents-wrap, .videos-contents-wrap {
+    position: relative;
+}
+.why-choose-area {
+    position: relative;
+    @media #{$laptop-device,$desktop-device,$tablet-device,$large-mobile}{
+        overflow: hidden;
+        & .choose-main-area {
+            margin-bottom: 0px;
+        }
+        & .choose-button {
+            margin-top: 25px;
+        }
+    }
+}
+
+.choose-contents-wrap {
+    & p {
+        font-size: 16px;
+    }
+}
+.choose-image-wrap {
+    @media #{$large-mobile}{
+        margin-top: 30px;
+    }
+    @media #{$tablet-device,$large-mobile}{
+        & img {
+            width: 100%;
+        }
+    }
+}
+.choose-button {
+    margin-top: 40px;
+}
+.choose-main-area {
+    
+}
+.choose-contents-wrap.ml--35 {
+    margin-left: 35px;
+    @media #{$tablet-device,$large-mobile}{
+        margin-left: 0;
+    }
+}
+.section-bg-shape {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: -50px;
+        width: 100%;
+        height: 100%;
+        background: url("../images/other/choose-s-01.png") no-repeat bottom right;
+        @media #{$laptop-device}{
+            right: -315px;
+        }
+        @media #{$desktop-device}{
+            right: -320px;
+            bottom: -200px;
+        }
+        @media #{$tablet-device}{
+            right: -280px;
+            bottom: -193px;
+            background: url("../images/other/choose-s-01.png") no-repeat top left
+        }
+        @media #{$large-mobile}{
+            right: -280px;
+            bottom: -193px;
+            background: url("../images/other/choose-s-01.png") no-repeat top left
+        }
+    }
+}
+
+.feature-list-area {
+    @media #{$desktop-device,$tablet-device,$large-mobile}{
+        margin-top: 0;
+    }
+    & .feature-list-two {
+        margin-top: 60px;
+        @media #{$desktop-device,$tablet-device,$large-mobile}{
+            margin-top: 30px;
+        }
+    }
+}
+.feature-list {
+    margin-top: 20px;
+    & li {
+        margin-bottom: 15px;
+        font-size: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        & i {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+.video-inner-wrap {
+    position: relative;
+    & .video-btn {
+        position: absolute;
+        left: 47%;
+        top: 47%;
+        background-image: linear-gradient(to top, #12b4f2 0%, #0259ae 51%, #12b4f2 100%);
+        background-size: auto  200%;
+        color: $white;
+        font-size: 18px;
+        height: 80px;
+        font-size: 30px;
+        width: 80px;
+        line-height: 80px;
+        border-radius: 5000px;
+        transform: translateY(-50%) translateX(-50%);
+        @media #{$large-mobile} {
+            height: 60px;
+            font-size: 20px;
+            width: 60px;
+            line-height: 60px;
+        }
+        &.red {
+            background-image: none;
+            background-color: $theme-color-four;
+            &:hover {
+                background-color: $white;
+                color: $theme-color-four;
+            }
+        }
+    }
+}
+.section-pb-b {
+    padding-bottom: 110px;
+    
+    @media #{$desktop-device} {
+        padding-bottom: 100px;
+    }
+    @media #{$tablet-device} {
+        padding-bottom: 80px;
+    }
+    @media #{$large-mobile} {
+        padding-bottom: 70px;
+    }
+    @media #{$small-mobile} {
+        padding-bottom: 60px;
+    }
+}
+
+.section-bg-shape-2 {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        right: 25px;
+        bottom: -100px;
+        width: 100%;
+        height: 100%;
+        background: url("../images/other/mokup-08.png") no-repeat top right;
+        @media #{$laptop-device}{
+            right: -200px;
+        }
+        @media #{$desktop-device}{
+           right: -400px;
+        }
+        @media #{$tablet-device}{
+            right: -548px;
+            bottom: 80px;
+            background: url("../images/other/mokup-08.png") no-repeat bottom left;
+            
+        }
+        @media #{$large-mobile}{
+            background: none;
+        }
+    }
+}
+.videos-image-wrap {
+    position: relative;
+}
+.play-btn {
+    background: #fff;
+    font-size: 30px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 5000pc;
+    color: #ffab00;
+    position: relative;
+    z-index: 2;
+    &:hover {
+        color: $theme-color-two;
+    }
+}
+.video-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.video-animation {
+    position: absolute;
+    width: 14rem;
+    height: 14rem;
+    left: -70px;
+    top: -70px;
+    z-index: 1;
+    float: right;
+    & .animation {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        background: rgba(231, 179, 24, 0.9);
+        background-clip: border-box;
+        opacity: 0;
+        border-radius: 50%;
+        background-clip: padding-box;
+        animation: waves 3s ease-in-out infinite;
+        animation-delay: 0s;
+        &.animation-1 {
+            animation-delay: 0.5s;
+        }
+        &.animation-2 {
+            animation-delay: 1.5s;
+        }
+        &.animation-3 {
+            animation-delay: 2.5s;
+        }
+    }
+}
+@-webkit-keyframes waves {
+    0% { 
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% { 
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+    }
+}
+@keyframes waves {
+    0% { 
+        transform: scale(0.2, 0.2); 
+        opacity: 0;
+    }
+    50% { 
+        opacity: 0.9;
+    }
+    100% { 
+        transform: scale(0.7, 0.7);
+        opacity: 0;
+    }
+}
+
+.section-t-border {
+    border-top: 1px solid #ddd;
+    padding-top: 100px;
+    margin-top: 100px;
+    
+    @media #{$desktop-device}{
+        padding-top: 80px;
+        margin-top: 80px;    
+    }
+    @media #{$tablet-device}{
+        padding-top: 50px;
+        margin-top: 80px; 
+    }
+    @media #{$large-mobile}{
+        padding-top: 30px;
+        margin-top: 60px; 
+    }
+}
+.section-t-border-2 {
+    border-top: 1px solid #203544;
+    padding-top: 100px;
+    margin-top: 100px;
+    
+    @media #{$desktop-device}{
+        padding-top: 80px;
+        margin-top: 80px;    
+    }
+    @media #{$tablet-device}{
+        padding-top: 50px;
+        margin-top: 80px; 
+    }
+    @media #{$large-mobile}{
+        padding-top: 30px;
+        margin-top: 60px; 
+    }
+}
+.single-brand {
+    & a {
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    @media #{$large-mobile,$tablet-device}{
+        margin-top: 30px;
+    }
+}
+
+.header--transparant {
+    position: absolute;
+}

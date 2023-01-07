@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="movie-list-area section-ptb-50 bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-12 me-auto ms-auto">
+                    <div class="movie-list-top-bar">
+                        <div class="movie-list-title">
+                            <h2 class="title">Coming Soon Rating Prediction</h2>
+                        </div>
+                        {#                        <div class="movie-list-clear">#}
+                        {#                            <button class="Watch-list-clear-btn" type="button">Clear History</button>#}
+                        {#                        </div>#}
+                        <div class="dropdown">
+                            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{{ url_for("home_bp.comingSoon", sort="rating") }}">Rating (high to low)</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for("home_bp.comingSoon", sort="releaseDate") }}">Release Date (recently)</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                <div class="badge bg-success fs-6 mb-3">Last Prediction: {{ predictionLastTime }} </div>
+
+                    <div class="movielist-wrap">
+                        {% for m in movie %}
+
+                            <div class="single-movielist">
+                                <div class="movielist-img-content">
+                                    <div class="movielist-img">
+                                        <a href="https://www.imdb.com/title/{{ m.imdb_id }}">
+                                            <img src="{{ m.image_url }}" alt="" loading="lazy">
+                                            <i class="zmdi zmdi-play play-btn-style"></i>
+                                        </a>
+                                    </div>
+                                    <div class="movielist-content">
+                                        <h3 class="title"><a
+                                                href="https://www.imdb.com/title/{{ m.imdb_id }}">{{ m.title }}</a></h3>
+                                        <p>Release Date: {{ m.releaseDate }}</p>
+                                        <p>{{ m.plot }}</p>
+                                    </div>
+                                </div>
+                                <div class="movielist-close">
+                                    <div class="badge bg-primary fs-5">{{ m.predict_rating|round(2) }}</div>
+                                    {#                                <a class="watchlist-close-btn" href="#"><i class="zmdi zmdi-close"></i></a>#}
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+/*--
+    - Paginatoin Css
+---------------------------------*/
+.pagination-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    @media #{ $large-mobile} {
+        margin-top: 60px;
+    }
+    
+    & li {
+        display: inline-block;
+        margin: 0 4px;
+        &.active a {
+            color: $white;
+            background: $theme-color-two;
+            border: 1px solid  $theme-color-two;
+        }
+        & a {
+            color: #333333;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e8e8e8;
+            line-height: 40px;
+            text-align: center;
+            color: $theme-color-two;
+            font-size: 18px;
+            border-radius: 5px;
+            &:hover {
+                color: $white;
+                background: $theme-color-two;
+                border: 1px solid  $theme-color-two;
+            }
+            & span {
+                font-size: 18px;
+            }
+        }
+    }
+}

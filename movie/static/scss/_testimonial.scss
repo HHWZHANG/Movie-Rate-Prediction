@@ -1,0 +1,118 @@
+/*--
+    13. Testimonial Css
+ ---------------------------------*/
+.testimonial {
+    &-image {
+        margin: auto;
+        text-align: center;
+    }
+}
+.testimonial {
+  text-align: center;
+  padding: 30px 55px 0;
+  margin: 0 auto;
+  margin-top: 85px;
+  position: relative;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out 0s;
+  z-index: 1;
+    @media #{$small-mobile}{
+        padding: 30px 30px 0;
+    }
+}
+.testimonial-header {
+  margin-top: 40px;
+  transition: all 0.3s ease-in-out 0s;
+    & .bg-inner-image {
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        &::before {
+            background: linear-gradient(rgba(52, 176, 226, 0.8) 0%, rgba(76, 107, 209, 0.8) 100%);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 5000px;
+        }
+    }
+    
+    & i {
+        position: absolute;
+        top: 40%;
+        font-size: 22px;
+        color: #ffc61b;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.testimonial-image {
+  height: 140px;
+  width: 140px;
+  display: inline-block;
+  border-radius: 100px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  z-index: 1;
+  transition: all 0.4s ease-in-out 0s;
+  visibility: hidden;
+    opacity: 0;
+   
+}
+
+.slick-current .testimonial-image {
+  transition: all 0.4s ease-in-out;
+  height: 140px;
+  width: 140px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.testimonial-slider {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.testimonial-slider .slider-item {
+  margin: 15px 0 0 0;
+}
+.first-elem {
+    transition: all 0.4s ease-in-out;
+    & .testimonial-header {
+        & .bg-inner-image {
+            &::after {
+                background: #ffc61b;
+                content: "";
+                position: absolute;
+                right: -112px;
+                top: 50%;
+                height: 1px;
+                width: 112px;
+                line-height: 45px;
+                @include transition(0.3);
+            }
+        }
+    }
+}
+.last-elem {
+    transition: all 0.4s ease-in-out;
+    & .testimonial-header {
+        & .bg-inner-image {
+            &::after {
+                background: #ffc61b;
+                content: "";
+                position: absolute;
+                left: -112px;
+                top: 50%;
+                height: 1px;
+                width: 112px;
+                line-height: 45px;
+                @include transition(0.3); 
+            }
+        }
+    }
+}

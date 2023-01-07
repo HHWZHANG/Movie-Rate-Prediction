@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <!-- slider area start -->
+    <div class="slider-area bg-black">
+        <div class="container-fluid p-0">
+            <div class="series-slider-active nav-style-1">
+                <div class="single-hero-img-2">
+                    <a href="movie-details.html"><img src="assets/images/slider/category-4.jpg" alt=""></a>
+                </div>
+                <div class="single-hero-img-2">
+                    <a href="movie-details.html"><img src="assets/images/slider/movie-1.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-list section-padding-lr section-pt-50 bg-black">
+        <div class="container-fluid">
+            <div class="section-title-4 st-border-bottom">
+                <h2>Recommended For You</h2>
+            </div>
+            <div class="movie-slider-active nav-style-2">
+
+                {% for m in recommended_movies %}
+                    <div class="movie-wrap-plr">
+                        <div class="movie-wrap text-center">
+                            <div class="movie-img">
+                                <a href="{{ url_for("movie_detail_bp.movie_detail", imdb_id=m.imdb_id) }}"><img src="{{ m.image_url }}" alt="" loading="lazy" class=""></a>
+                                <button title="Watchlist" class="Watch-list-btn" type="button"><i
+                                        class="zmdi zmdi-plus"></i></button>
+                            </div>
+                            <div class="movie-content">
+                                <h3 class="title"><a href="https://www.imdb.com/title/{{ m.imdb_id }}">{{ m.title }}</a>
+                                </h3>
+                                <span>IMDB Rating : {{ m.rating }}</span>
+                                <div class="movie-btn">
+                                    <a href="https://www.imdb.com/title/{{ m.imdb_id }}"
+                                       class="btn-style-hm4-2 animated">See IMDB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <div class="series-list section-padding-lr section-pt-50 bg-black pb-5">
+        <div class="container-fluid">
+            <div class="section-title-4 st-border-bottom">
+                <h2>Coming Soon</h2>
+            </div>
+            <div class="movie-slider-active nav-style-2">
+
+                {% for m in comingSoon %}
+                    <div class="movie-wrap-plr">
+                        <div class="movie-wrap text-center">
+                            <div class="movie-img">
+                                <a href="#"><img src="{{ m.image_url }}" alt="" loading="lazy"></a>
+                                <button title="Watchlist" class="Watch-list-btn" type="button"><i
+                                        class="zmdi zmdi-plus"></i></button>
+                            </div>
+                            <div class="movie-content">
+                                <h3 class="title"><a href="https://www.imdb.com/title/{{ m.imdb_id }}">{{ m.title }}</a>
+                                </h3>
+                                <span>Predicted Rating : {{ m.predict_rating|round(2) }}</span>
+                                <div class="movie-btn">
+                                    <a href="https://www.imdb.com/title/{{ m.imdb_id }}"
+                                       class="btn-style-hm4-2 animated">See IMDB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

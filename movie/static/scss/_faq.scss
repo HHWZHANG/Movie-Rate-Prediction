@@ -1,0 +1,207 @@
+
+/*--
+    11. Faq Style
+-------------------------------*/ 
+.faq-image-wrap {
+    position: relative;
+}
+.faq-style-wrap {
+    margin-top: 60px;
+    & .panel-default{
+        margin-bottom: 10px;
+    }
+    & .panel-title {
+        margin-bottom: 0;
+        font-weight: 500;
+        line-height: 24px;
+        & .button-faq {
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            background: $theme-color;
+            z-index: 1;
+            right: 10px;
+            top: 44%;
+            transform: translateY(-40%);
+        }
+        
+        & a {
+            background: #f6f9fb;
+            padding: 25px 60px 25px 15px;
+            font-size: 16px;
+            display: flex;
+            & span {
+                margin-right: 10px;
+            }
+            
+            @media #{$large-mobile}{
+                padding: 15px 50px 15px 15px;
+            }
+            
+            &[aria-expanded="true"] {
+                margin-bottom: 0px;
+                position: relative;
+                width: 100%;
+                &::before{
+                    position: absolute;
+                    content: "\f2f9";
+                    font-family: 'Material-Design-Iconic-Font';
+                    color: #fff;
+                    background-image: linear-gradient(to left, #0259ae 51%, #12b4f2 100%);
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: 0.4s ease-in-out;
+                    border-radius: 100%;
+                    z-index: 4;
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+
+    & .panel-body {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 15px;
+        & p {
+            color: #494849;
+            font-size: 16px;
+            line-height: 28px;
+        }
+        & .read-btn {
+             a {
+                font-size: 14px;
+                color: #3e3e3e;
+                font-weight: 500;
+                display: inline-block;
+                border-bottom: 1px solid #9e9e9e;
+            }
+        }
+    }
+}
+.frequently-ask-questions-area {
+    position: relative;
+    overflow: hidden;
+    & p {
+        font-size: 16px;
+    }
+}
+.faq-inner-image {
+    position: absolute;
+    bottom: 150px;
+    padding-left: 15px;
+    right: -300px;
+    left: auto;
+    @media #{$tablet-device}{
+        position: relative;
+        bottom: 0;
+        padding-left: 15px;
+        margin-top: 60px;
+        right: 0;
+        left: 0;
+    }
+    @media #{$large-mobile}{
+        position: relative;
+        bottom: 0;
+        padding-left: 15px;
+        margin-top: 60px;
+        right: 0;
+        img {
+            width: 100%;
+        }
+    }
+   
+}
+.every-moments-wrap {
+    & .section-title-3 {
+        & h2 {
+            line-height: 1.2;
+        }
+    }
+    
+    & p {
+        font-size: 16px;
+    }
+}
+.single-list-dec {
+    padding-left: 30px;
+    position: relative;
+    margin-top: 40px;
+    font-size: 16px;
+    &::after {
+        content: "\f26b";
+        font-family: Material-Design-Iconic-Font;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    & h6 {
+        line-height: 1.5;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+}
+.support-and-solution {
+    position: relative;
+    overflow: hidden;
+}
+.moments-inner-image {
+    position: absolute;
+    right: -75%;
+    top: 10%;
+    
+    @media #{$laptop-device}{
+        right: -50%;
+    }
+    @media #{$desktop-device}{
+        right: -30%;
+        top: 30%;
+    }
+    @media #{$tablet-device}{
+        right: 0%;
+        top: 30px;
+    }
+    @media #{$large-mobile}{
+        right: 0%;
+        top: 30px;
+    }
+}
+.moments-inner-image-2 {
+    position: relative;
+    right: -45px;
+    top: 40%;
+    @media #{$laptop-device}{
+        right: 0px;
+        top: 30%;
+    }
+    @media #{$desktop-device}{
+        right: 0px;
+    }
+    @media #{$tablet-device}{
+        right: -100px;
+        top: 24%;
+    }
+    @media #{$large-mobile}{
+        right: 0px;
+        top: 24%;
+    }
+}
+
+/*--
+     solutions Css
+------------------------------------*/
+.single-solutions {
+    display: flex;
+    
+    &-icons {
+        min-width: 50px;
+    }
+    &-contents {
+        margin-left: 20px;
+    }
+}
