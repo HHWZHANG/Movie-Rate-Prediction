@@ -1,7 +1,7 @@
 # Movie-Rate-Prediction
 
 <div align="center">
-	<img src="CineTimeMachine_logo_transparency.png" alt="Editor" width="150">
+	<img src="CineTimeMachine_logo_black.png" alt="Editor" width="150">
 </div>
 
 ## Install
